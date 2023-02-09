@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホームページ</title>
+    <style>
+        /* 背景画像 */
+        body {
+            background-image: url("moon.jpg");
+            background-size: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .wrap {
+            padding: 32px 0 64px;
+            background-color: #ffffff7b;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+            background-color: rgba(233, 217, 217, 0.708);
+        }
+
+        .heading-lv1 {
+            font-size: 32px;
+            font-family: "Nico Moji";
+        }
+
+        .heading-lv2 {
+            font-size: 24px;
+        }
+
+        .heading-lv3 {
+            font-size: 20px;
+        }
+
+        .text {
+            margin: 16px 0 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        #text {
+            font-size: 16px;
+
+        }
+
+        /* プロフィール画像 */
+        .profile-image {
+            margin: 16px 0 0;
+            text-align: center;
+        }
+
+        /* プロフ画像丸くする */
+        .profile-image img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        
+    </style>
+</head>
+
+<body class="wrap">
+
+    <div class="content">
+        <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+        <h1 class="heading-lv1 text-center">はじめまして</h1>
+        <figure class="profile-image">
+            <img src="profile.JPG" alt=" " width="300" height="300">
+        </figure>
+
+        <h2 class="heading-lv2 text-center">小林圭吾</h2>
+
+        <h3 class="heading-lv3 text-center">プロフィール</h3>
+        <p class="text text-center">PythonとJavaを勉強中<br>
+            専門学生<br>
+            趣味は海外サッカーを観ることとたまにラーメン巡り<br>
+            好きなサッカークラブチームはマンチェスター・シティ
+        </p>
+
+        <p class="text text-center"><a href="ramen.html">おすすめラーメンへ</a></p>
+        <a href="" class="btn btn-border"></a>
+        <audio src="denpa.mp3" autoplay loop>
+            あなたのブラウザーは <code>audio</code>要素をサポートしていません。
+        </audio>
+
+    </div>
+
+
+
+</body>
+
+</html>
