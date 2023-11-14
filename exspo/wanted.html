@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theme</title>
+    <style>
+        body {
+            background-image: url("worldmap.jpg");
+            background-size: cover;
+        }
+
+        .heading-lv1 {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 80px;
+            height: 100px;
+            line-height: 200px;
+        }
+
+        .heading-img {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translateY(-50%, -50%);
+
+        }
+        .NEXT {
+            position: absolute;
+            right: 150px;
+            bottom: 50px;
+            font-size: 30px;
+            font-family: 'Oswald', sans-serif;
+        }
+        .BACK{
+            position: absolute;
+            right:1300px;
+            bottom: 50px;
+            font-size: 30px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn05 {
+            /*線の基点とするためrelativeを指定*/
+            position: relative;
+            /*ボタンの形状*/
+            display: inline-block;
+            color: #333;
+            padding: 10px 20px;
+            background: #eee;
+            text-decoration: none;
+            outline: none;
+            /*アニメーションの指定*/
+            transition: all .3s;
+            transition-delay: .7s;
+            /*0.7秒遅れてアニメーション*/
+
+        }
+
+        /*hoverした際の、ボタンの背景とテキスト色の変更*/
+        .btn05:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        /*線の設定*/
+        .btn05 span {
+            display: block;
+        }
+
+        /*横線の設定*/
+        .btn05::before,
+        .btn05::after {
+            content: "";
+            /*絶対配置で線の位置を決める*/
+            position: absolute;
+            /*線の形状*/
+            width: 0;
+            height: 1px;
+            background: #333;
+            /*アニメーションの指定*/
+            transition: all 0.2s linear;
+        }
+
+        /*縦線の設定*/
+        .btn05 span::before,
+        .btn05 span::after {
+            content: "";
+            /*絶対配置で線の位置を決める*/
+            position: absolute;
+            /*線の形状*/
+            width: 1px;
+            height: 0;
+            background: #333;
+            /*アニメーションの指定*/
+            transition: all 0.2s linear;
+        }
+
+        /*hoverした際、線が縦横100%伸びる*/
+        .btn05:hover::before,
+        .btn05:hover::after {
+            width: 100%;
+        }
+
+        .btn05:hover span::before,
+        .btn05:hover span::after {
+            height: 100%;
+        }
+
+        /*== 左上と右下から枠線が伸びて塗に */
+
+        /*横線が0.2秒送れて出現*/
+
+        .bordercircle1::before {
+            right: 0;
+            top: 0;
+            transition-delay: 0.2s;
+        }
+
+        .bordercircle1::after {
+            left: 0;
+            bottom: 0;
+            transition-delay: 0.2s;
+        }
+
+        /*縦線が出現*/
+        .bordercircle1 span::before {
+            left: 0;
+            top: 0;
+        }
+
+        .bordercircle1 span::after {
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading-lv1">指名手配</h1>
+    <div class="heading-img">
+        <img src="画像イメージのアイコン素材 5.jpeg" width="300px">
+    </div>
+    <div class="NEXT">
+        <a href="scan.html" class="btn05 bordercircle1">NEXT</a>
+    </div>
+    <div class="BACK">
+        <a href="mission.html" class="btn05 bordercircle1"><span>BACK</span></a>
+    </div>
+
+</body>
+
+</html>

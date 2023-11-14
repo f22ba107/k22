@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scan</title>
+    <style>
+        body {
+            background-image: url("worldmap.jpg");
+            background-size: cover;
+        }
+
+        .NEXT {
+            position: absolute;
+            right: 150px;
+            bottom: 50px;
+            font-size: 30px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .BACK {
+            position: absolute;
+            right: 1300px;
+            bottom: 50px;
+            font-size: 30px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn05 {
+            /*線の基点とするためrelativeを指定*/
+            position: relative;
+            /*ボタンの形状*/
+            display: inline-block;
+            color: #333;
+            padding: 10px 20px;
+            background: #eee;
+            text-decoration: none;
+            outline: none;
+            /*アニメーションの指定*/
+            transition: all .3s;
+            transition-delay: .7s;
+            /*0.7秒遅れてアニメーション*/
+
+        }
+
+        /*hoverした際の、ボタンの背景とテキスト色の変更*/
+        .btn05:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        /*線の設定*/
+        .btn05 span {
+            display: block;
+        }
+
+        /*横線の設定*/
+        .btn05::before,
+        .btn05::after {
+            content: "";
+            /*絶対配置で線の位置を決める*/
+            position: absolute;
+            /*線の形状*/
+            width: 0;
+            height: 1px;
+            background: #333;
+            /*アニメーションの指定*/
+            transition: all 0.2s linear;
+        }
+
+        /*縦線の設定*/
+        .btn05 span::before,
+        .btn05 span::after {
+            content: "";
+            /*絶対配置で線の位置を決める*/
+            position: absolute;
+            /*線の形状*/
+            width: 1px;
+            height: 0;
+            background: #333;
+            /*アニメーションの指定*/
+            transition: all 0.2s linear;
+        }
+
+        /*hoverした際、線が縦横100%伸びる*/
+        .btn05:hover::before,
+        .btn05:hover::after {
+            width: 100%;
+        }
+
+        .btn05:hover span::before,
+        .btn05:hover span::after {
+            height: 100%;
+        }
+
+        /*== 左上と右下から枠線が伸びて塗に */
+
+        /*横線が0.2秒送れて出現*/
+
+        .bordercircle1::before {
+            right: 0;
+            top: 0;
+            transition-delay: 0.2s;
+        }
+
+        .bordercircle1::after {
+            left: 0;
+            bottom: 0;
+            transition-delay: 0.2s;
+        }
+
+        /*縦線が出現*/
+        .bordercircle1 span::before {
+            left: 0;
+            top: 0;
+        }
+
+        .bordercircle1 span::after {
+            right: 0;
+            bottom: 0;
+        }
+
+        .heading-img {
+            position: absolute;
+            top: 20%;
+            left: 40%;
+            transform: translateY(-50%, -50%);
+        }
+
+        .btn-radius-gradient-wrap {
+            position: absolute;
+            right: 650px;
+            bottom: 200px;
+            font-size: 30px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+        }
+
+        html {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+
+        /* 背景用*/
+        body {
+            padding: 30px;
+        }
+
+        .btn,
+        a.btn,
+        button.btn {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.5;
+            position: relative;
+            display: inline-block;
+            padding: 1rem 4rem;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            color: #212529;
+            border-radius: 0.5rem;
+        }
+
+        .btn-radius-gradient-wrap {
+            display: inline-block;
+
+            padding: 0.5rem;
+
+            border-radius: 100vh;
+            background: #f2f5f6;
+            background: -webkit-linear-gradient(to top,
+                    #f2f5f6 0%,
+                    #e3eaed 37%,
+                    #96a1a5 100%);
+            background: -webkit-gradient(linear,
+                    left top,
+                    left bottom,
+                    from(#f2f5f6),
+                    color-stop(37%, #e3eaed),
+                    to(#96a1a5));
+            background: -webkit-linear-gradient(top,
+                    #f2f5f6 0%,
+                    #e3eaed 37%,
+                    #96a1a5 100%);
+            background: linear-gradient(to bottom, #f2f5f6 0%, #e3eaed 37%, #96a1a5 100%);
+
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f5f6', endColorstr='#96a1a5', GradientType=0);
+        }
+
+        a.btn-radius-gradient {
+            border-radius: 100vh;
+            background: #e3eaed;
+            background: -webkit-gradient(linear,
+                    left top,
+                    left bottom,
+                    from(#e3eaed),
+                    to(#f2f5f6));
+            background: -webkit-linear-gradient(top, #e3eaed 0%, #f2f5f6 100%);
+            background: linear-gradient(to bottom, #e3eaed 0%, #f2f5f6 100%);
+
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3eaed', endColorstr='#f2f5f6', GradientType=0);
+        }
+
+        a.btn-radius-gradient:hover {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+
+        .appload{
+            position: absolute;
+            right: 530px;
+            bottom: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="appload">
+    <label for="upload">写真を撮影してアップロードする</label>
+    <input id="upload" type="file" name="image" accept="image/*" capture="camera">
+    </div>
+
+    <div class="heading-img">
+        <img src="イメージ画像のアイコン素材 2.jpeg" width="300px">
+    </div>
+    <div class="btn-radius-gradient-wrap">
+        <a href="" class="btn btn-radius-gradient">スキャンする</a>
+    </div>
+    <div class="NEXT">
+        <a href="scan.html" class="btn05 bordercircle1">NEXT</a>
+    </div>
+    <div class="BACK">
+        <a href="mission.html" class="btn05 bordercircle1"><span>BACK</span></a>
+    </div>
+
+</body>
+
+</html>
