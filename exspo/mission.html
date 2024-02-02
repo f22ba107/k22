@@ -4,8 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Refresh" content="3;URL=mission.html">
     <title>MISSION</title>
     <style>
+        a {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+            transform: translate(-100%, 0);
+            transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
+            content: "";
+        }
+
+        a:hover:after {
+            transform: translate(0, 0);
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; /* スマホでは縦に並べる */
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: "Yu Gothic Medium", "游ゴシック Medium", "Yu Gothic", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo";
+            line-height: 1.4;
+            font-size: 20px;
+            background-color: #333;
+        }
+
         body {
             background-image: url("worldmap.jpg");
             background-size: cover;
@@ -14,112 +51,68 @@
         .heading-lv1 {
             font-family: Georgia, 'Times New Roman', Times, serif;
             text-align: center;
-            font-size: 100px;
-            height: 100px;
-            line-height: 200px;
+            font-size: 8vw; /* Responsive font size */
+            height: auto;
+            line-height: 1.5;
+            margin: 0;
         }
 
-        .heading-lv2 {
-            font-family: sans-serif;
-            text-align: center;
-            font-size: 50px;
-            height: 100px;
-            line-height: 200px;
-        }
-
+        .heading-lv2,
         .heading-lv3 {
             font-family: sans-serif;
             text-align: center;
-            font-size: 50px;
-            height: 100px;
-            line-height: 200px;
+            font-size: 4vw; /* Responsive font size */
+            line-height: 1.5;
+            margin: 0;
         }
 
-        .heading-lv4 {
-            font-family: sans-serif;
-            text-align: center;
-            font-size: 50px;
-            height: 100px;
-            line-height: 200px;
-        }
-
-        .NEXT {
-            position: absolute;
-            right: 150px;
-            bottom: 50px;
-            font-size: 30px;
-            font-family: 'Oswald', sans-serif;
-        }
-
+        .NEXT,
         .BACK {
-            position: absolute;
-            right: 1300px;
-            bottom: 50px;
-            font-size: 30px;
+            position: relative;
+            margin: 10px 0; /* Add margin for better spacing */
+            font-size: 4vw; /* Responsive font size */
             font-family: 'Oswald', sans-serif;
-        }
-
-        a {
-            text-decoration: none;
         }
 
         .btn05 {
-            /*線の基点とするためrelativeを指定*/
             position: relative;
-            /*ボタンの形状*/
             display: inline-block;
             color: #333;
-            padding: 10px 20px;
+            padding: 5px 10px; /* Adjusted padding for better spacing */
             background: #eee;
             text-decoration: none;
             outline: none;
-            /*アニメーションの指定*/
             transition: all .3s;
             transition-delay: .7s;
-            /*0.7秒遅れてアニメーション*/
-
         }
 
-        /*hoverした際の、ボタンの背景とテキスト色の変更*/
         .btn05:hover {
             background: #333;
             color: #fff;
         }
 
-        /*線の設定*/
-        .btn05 span {
-            display: block;
-        }
-
-        /*横線の設定*/
+        .btn05 span,
         .btn05::before,
         .btn05::after {
             content: "";
-            /*絶対配置で線の位置を決める*/
             position: absolute;
-            /*線の形状*/
+            transition: all 0.2s linear;
+        }
+
+        .btn05::before,
+        .btn05::after {
             width: 0;
             height: 1px;
             background: #333;
-            /*アニメーションの指定*/
-            transition: all 0.2s linear;
         }
 
-        /*縦線の設定*/
         .btn05 span::before,
         .btn05 span::after {
-            content: "";
-            /*絶対配置で線の位置を決める*/
-            position: absolute;
-            /*線の形状*/
             width: 1px;
             height: 0;
             background: #333;
-            /*アニメーションの指定*/
-            transition: all 0.2s linear;
         }
 
-        /*hoverした際、線が縦横100%伸びる*/
         .btn05:hover::before,
         .btn05:hover::after {
             width: 100%;
@@ -130,9 +123,15 @@
             height: 100%;
         }
 
-        /*== 左上と右下から枠線が伸びて塗に */
-
-        /*横線が0.2秒送れて出現*/
+        .bordercircle1::before,
+        .bordercircle1::after,
+        .bordercircle1 span::before,
+        .bordercircle1 span::after {
+            content: "";
+            position: absolute;
+            background: #333;
+            transition: all 0.2s linear;
+        }
 
         .bordercircle1::before {
             right: 0;
@@ -146,7 +145,6 @@
             transition-delay: 0.2s;
         }
 
-        /*縦線が出現*/
         .bordercircle1 span::before {
             left: 0;
             top: 0;
@@ -157,29 +155,24 @@
             bottom: 0;
         }
 
-        /* styles.css */
-
-        /* モバイルに対する基本的なスタイル */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* レスポンシブデザイン用のメディアクエリ */
         @media screen and (max-width: 768px) {
-
-            /* モバイル用のスタイル */
-            /* 例えば、ナビゲーションのリンクを縦並びにするなど */
-            nav {
-                display: flex;
-                flex-direction: column;
+            .NEXT,
+            .BACK {
+                position: static;
+                font-size: 6vw; /* Responsive font size */
             }
 
-            /* 画像のサイズ調整など */
-            img {
-                max-width: 100%;
-                height: auto;
+            .btn05 {
+                padding: 3px 6px; /* Adjusted padding for better spacing */
+            }
+
+            .heading-lv1 {
+                font-size: 12vw; /* Responsive font size */
+            }
+
+            .heading-lv2,
+            .heading-lv3 {
+                font-size: 6vw; /* Responsive font size */
             }
         }
     </style>
@@ -190,7 +183,6 @@
     <h1 class="heading-lv1" href="https://fonts.googleapis.com/css?family=Oswald:700 rel=" stylesheet>MISSION</h1>
     <h2 class="heading-lv2">① 手配書に似ている人物を探し出せ</h2>
     <h3 class="heading-lv3">② 似ている人物を見つけたら今いる場所まで連れてくる</h3>
-
 
     <div class="NEXT" class="btn_audio" onclick="audio()">
         <a href="wanted.html" class="btn05 bordercircle1">NEXT</a>
@@ -204,8 +196,6 @@
     <audio class="btn_audio2">
         <source src="拳銃を撃つ.mp3" type="audio/mp3">
     </audio>
-
-
 </body>
 
 </html>
