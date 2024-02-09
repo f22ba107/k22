@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紹介ページ</title>
+    <style>
+        header {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            position: fixed;
+            font-size: 25px;
+            z-index: 1000;
+            width: 100%;
+            background-color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .bg_pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #fffff;
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        .Polka_v2 {
+            background-image: radial-gradient(#ffc107 2px, transparent 2px), radial-gradient(#ffc107 2px, #f4f4f4 2px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /*=============
+        base
+        ==============*/
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: YuGothic, "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+            letter-spacing: .025em;
+            line-height: 1.8;
+            background-color: #ffffff; /* Added background color */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .section {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        ._a {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        ._a a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 15px 10px;
+            border: 1px solid #222222;
+            background: linear-gradient(to right, #ffffff 50%, #222222 50%);
+            background-size: 200% auto;
+            color: #222222;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+            transition: .3s;
+            position: relative;
+        }
+
+        ._a a:after {
+            content: "";
+            position: absolute;
+            right: -5px;
+            bottom: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            border-right: 1px solid #222222;
+            border-bottom: 1px solid #222222;
+        }
+
+        ._a a:hover {
+            color: #ffffff;
+            background-position: -100% 0;
+        }
+
+        .punch,
+        .AI {
+            text-align: center;
+            border: solid 10px #7f92ef;
+            padding: 8px;
+            color: #7f92ef;
+            font-size: 25px;
+            max-width: 90%;
+            display: block;
+            margin: auto;
+            margin-top: 80px;
+            background-color: #ffffff;
+        }
+
+        .punch img,
+        .AI img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CID EXPO 2024</h1>
+    </header>
+
+    <div class="AI">
+        <img src="Title.png" alt="写真" width="300" height="200">
+        <p>WANTED</p>
+    </div>
+
+    <div class="punch">
+        <img src="Title.png" alt="写真" width="300" height="200">
+        <p>パンチングゲーム</p>
+    </div>
+    
+    <div class="bg_pattern Polka_v2"></div>
+    <div class="section">
+        <div class="_a"><a href="list.html" target="_blank">手配書の一覧はこちら</a></div>
+    </div>
+</body>
+
+</html>
