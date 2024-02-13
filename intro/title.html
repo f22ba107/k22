@@ -1,142 +1,66 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>タイトル</title>
-    <style>
-        @import url(https://fonts.googleapis.com/css?family=Anton);
+<meta charset="utf-8">
+<title>5-17 粒子が集まってタイポグラフィーを形成する</title>
+<style>
+    
+/*========= レイアウトのためのCSS ===============*/
 
-        body {
-            background: #000;
-        }
+body{
+  background:#333;
+  word-wrap : break-word;
+}
 
-        .unbreakable-container {
-            position: absolute;
-            bottom: 10px;
-            left: 20px;
-        }
+#main-area p{
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding:300px 0;
+}
 
-        .unbreakable {
-            font-family: 'Anton', sans-serif;
-            line-height: 1;
+a{
+  color: #fff;
+}
 
-            letter-spacing: -.07em;
+/*========= 粒子を描画するエリア設定 ===============*/
 
-            color: #fff;
-        }
+#wrapper{
+/*描画されるテキストを中央寄せにする*/
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .ks {
-            font-family: 'Anton', sans-serif;
-            font-size: 100px;
-            line-height: 1;
+#particle{
+    width:100%;
+  height: 100vh;
+  vertical-align: bottom;/*canvasタグ下に余白が生まれるのを防ぐ*/
+}
+$("#particle").particleText({
+    text: "If you can dream it<br>you can do it.<br>日本語もいけるよ", // 表示させたいテキスト。改行の場合は<br>追加
+    colors:["#fff","#ccc", "#ddd"], // パーティクルの色を複数指定可能
+    speed: "high",  // slow, middle, high の3つから粒子が集まる速さを選択
+  });
+</style>
 
-            margin-top: -11px;
-
-            -webkit-transition: all .3s ease-in-out;
-            transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 3s;
-            -webkit-transform: translateX(-1000%);
-            -ms-transform: translateX(-1000%);
-            transform: translateX(-1000%);
-            letter-spacing: -1px;
-            text-transform: uppercase;
-
-            color: #fc0;
-        }
-
-        .animate .ks {
-            -webkit-transform: translateX(0);
-            -ms-transform: translateX(0);
-            transform: translateX(0);
-        }
-
-        span {
-            font-family: 'Anton', Helvetica, sans-serif;
-            font-size: 40px;
-
-            text-transform: uppercase;
-
-            opacity: 0;
-            color: #fff;
-
-            filter: alpha(opacity=0);
-        }
-
-        .able {
-            -webkit-transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 2.3s;
-            transition: all .3s cubic-bezier(.190, 1.000, .220, 1.000) 2.3s;
-            letter-spacing: -.07em;
-        }
-
-        .break {
-            -webkit-transition: all .3s ease-in-out 2s;
-            transition: all .3s ease-in-out 2s;
-            letter-spacing: -.07em;
-        }
-
-        .un {
-            -webkit-transition: all .3s ease-in-out 1.7s;
-            transition: all .3s ease-in-out 1.7s;
-            letter-spacing: -.07em;
-        }
-
-        .animate .un {
-            font-size: 40px;
-
-            -webkit-transform: scale(1.5, 1.5);
-            -ms-transform: scale(1.5, 1.5);
-            transform: scale(1.5, 1.5);
-
-            opacity: 1;
-
-            filter: alpha(opacity=100);
-        }
-
-        .animate .break {
-            font-size: 60px;
-
-            -webkit-transform: scale(1.5, 1.5);
-            -ms-transform: scale(1.5, 1.5);
-            transform: scale(1.5, 1.5);
-
-            opacity: 1;
-
-            filter: alpha(opacity=100);
-        }
-
-        .animate .able {
-            font-size: 80px;
-
-            -webkit-transform: scale(1.5, 1.5);
-            -ms-transform: scale(1.5, 1.5);
-            transform: scale(1.5, 1.5);
-
-            opacity: 1;
-
-            filter: alpha(opacity=100);
-        }
-    </style>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--==============レイアウトを制御する独自のCSSを読み込み===============-->
+<link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-17/css/reset.css">
+<link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-17/css/5-17.css">
 </head>
 
 <body>
-    <script>
-        var hotbod = document.querySelector("body");
+    
+<div id="wrapper">
+<canvas id="particle"></canvas>
+<!--/wrapper--></div>
 
-        function doStuff() {
-            hotbod.className += " animate";
-        }
-
-        window.onload = function () {
-            doStuff();
-        };
-    </script>
-    <div class="unbreakable-container">
-        <div class="unbreakable">
-            <span class="un">UN</span><span class="break">BREAK</span><span class="able">ABLE</span>
-        </div>
-        <div class="ks">Kimmie Schmidt</div>
-    </div>
+<div id="main-area">
+  <p>ここから次のコンテンツスタート<br>※参照　<a href="https://github.com/55Kaerukun/particleText.js" target="_blank">https://github.com/55Kaerukun/particleText.js</a></p>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+<script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-17/js/particleText.js"></script>
+<script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-17/js/5-17.js"></script>
 </body>
-
 </html>

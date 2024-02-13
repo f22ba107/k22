@@ -8,14 +8,18 @@
     <style>
         header {
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            top: 0;
+            left: 0;
             position: fixed;
-            font-size: 25px;
+            font-size: 18px;
             z-index: 1000;
             width: 100%;
             background-color: #ffffff;
-            text-align: center;
-            padding: 10px 0;
+            text-align: left;
+            padding: 0.1% 0;
+            /* パディングを調整 */
         }
+
 
         .bg_pattern {
             position: fixed;
@@ -48,7 +52,8 @@
             font-family: YuGothic, "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
             letter-spacing: .025em;
             line-height: 1.8;
-            background-color: #ffffff; /* Added background color */
+            background-color: #ffffff;
+            /* Added background color */
         }
 
         * {
@@ -99,8 +104,7 @@
             background-position: -100% 0;
         }
 
-        .punch,
-        .AI {
+        .punch {
             text-align: center;
             border: solid 10px #7f92ef;
             padding: 8px;
@@ -110,8 +114,22 @@
             display: block;
             margin: auto;
             margin-top: 80px;
-            background-color: #ffffff;
+           
+            
         }
+
+        .AI {
+            text-align: center;
+            border: solid 10px #c57712;
+            padding: 8px 10px;
+            color: #c57712;
+            font-size: 25px;
+            max-width: 90%;
+            display: block;
+            margin: auto;
+            margin-top: 120px;
+        }
+
 
         .punch img,
         .AI img {
@@ -123,23 +141,38 @@
 
 <body>
     <header>
-        <h1>CID EXPO 2024</h1>
+        <h1>　CID EXPO 2024</h1>
     </header>
+    <br>
+    <br>
+    
 
     <div class="AI">
-        <img src="Title.png" alt="写真" width="300" height="200">
+        <img src="test.jpeg" alt="写真" width="300" height="200">
         <p>WANTED</p>
+    </div>
+    　
+    <center><b>「WANTED」</b>
+    <br>
+    <p>AI判定で1番似ているのは誰だ！？</p>
+    <p>お題に沿った1番似ている先生を連れてこよう！</p>
+    </center>
+    <div class="bg_pattern Polka_v2"></div>
+    <div class="section">
+        <div class="_a"><a href="list.html" target="_blank"><b>手配書の一覧はこちら</b></a></div>
     </div>
 
     <div class="punch">
         <img src="Title.png" alt="写真" width="300" height="200">
         <p>パンチングゲーム</p>
     </div>
-    
-    <div class="bg_pattern Polka_v2"></div>
-    <div class="section">
-        <div class="_a"><a href="list.html" target="_blank">手配書の一覧はこちら</a></div>
-    </div>
+    　
+    <center><b>「パンチングゲーム」</b>
+    <br>
+    <p>ゴールにまでに待ち構えるモンスターたちを殴り倒せ！</p>
+    <p>爽快パンチングゲーム！</p>
+    </center>   
+
 </body>
 
 </html>
