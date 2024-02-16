@@ -21,7 +21,7 @@
         }
 
         body {
-            background-color: ghostwhite;
+            background: linear-gradient(-45deg, #f9c2eb, #a8c2ee) fixed;
         }
 
         a {
@@ -54,7 +54,7 @@
         .boxer img {
             display: block;
             margin: 0 auto;
-            max-width: 100%;
+            max-width: 80%;
             /* 画像を親要素の幅に合わせる */
             height: auto;
             /* アスペクト比を保持しつつ高さを自動調整 */
@@ -76,15 +76,29 @@
     <br>
     <br>
     <br>
+    <br>
     <div class="text-line">
         <p>活動の様子</p>
     </div>
-    <a href="boxer.JPG" data-lightbox="group">
-        <div class="boxer">
-            <img src="boxer.JPG" alt="ボクサーの写真">
-        </div>
-    </a>
-    <center><p></p></center>
+    <div class="boxer">
+        <center>
+            <b><p>左パンチで難易度を変更！右パンチで決定！</p></b>
+        </center>
+        <img src="select.png" alt="選択画面"><br>
+        <center>
+            <b><p>ダンジョンの様子</p></b>
+        </center>
+        <img src="dungeon.png" alt="モンスター出現"><br>
+        <center>
+            <b><p>クリア画面</p></b>
+        </center>
+        <img src="clear.png" alt="クリア画面"><br>
+        <img src="boxer.JPG"><br>
+        <center>
+            <b><p>リーダーのストレートパンチ</p></b>
+        </center>
+    </div>
+    <br>
 </body>
 
 </html>
